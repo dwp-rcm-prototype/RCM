@@ -1,0 +1,147 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large">Who do you suspect is committing benefit fraud</h1>
+
+  <form>
+    <div class="form-group">
+       <label class="form-label" for="first-name-2">First name</label>
+       <input class="form-control" id="first-name-2" type="text">
+     </div>
+     <div class="form-group">
+       <label class="form-label" for="last-name-2">Last name</label>
+       <input class="form-control" id="last-name-2" type="text">
+     </div>
+     <div class="form-group">
+       <label class="form-label" for="other-name-1">Other names</label>
+       <input class="form-control" id="other-name-1" type="text">
+     </div>
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Is this person known by another name?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
+            <input id="radio-indent-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-2">
+            <input id="radio-indent-2" class="hide-show" type="radio" name="radio-indent-group" value="No">
+            No
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="full-name-1">
+          <div class="form-group">
+             <label class="form-label" for="first-name-2">First name</label>
+             <input class="form-control" id="first-name-2" type="text">
+           </div>
+           <div class="form-group">
+             <label class="form-label" for="last-name-2">Last name</label>
+             <input class="form-control" id="last-name-2" type="text">
+           </div>
+           <div class="form-group">
+             <label class="form-label" for="other-name-1">Other names</label>
+             <input class="form-control" id="other-name-1" type="text">
+           </div>
+         </div>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Do you know the date of birth for this person?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-dob-1">
+            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes-dob  ">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-dob-2">
+            <input id="radio-indent-dob-2" class="hide-show" type="radio" name="radio-indent-group" value="No-dob">
+            No
+          </label>
+        </div>
+          <div class="panel-indent js-hidden" id="dob-reveal">
+            <div class="form-date">
+              <p class="form-hint">For example, 31 3 1980</p>
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label>
+                <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+              </div>
+            </div>
+         </div>
+         <div class="panel-indent js-hidden" id="approx-age">
+           <div class=form-group>
+             <label class="form-label" for="dob">Enter their approximate age</label>
+             <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="150">
+           </div>
+         </div>
+      </fieldset>
+    </div>
+
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Does you know the address for this person?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-address">
+            <input id="radio-indent-address" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-address-no">
+            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
+            No
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="address-1">
+          <div class="form-group">
+            <label class="form-label" for="address">Building and Street</label>
+            <input class="form-control" id="address" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="town">Town or city</label>
+            <input class="form-control" id="town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="county">County (optional)</label>
+            <input class="form-control" id="county" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="postcode">Postcode</label>
+            <input class="form-control" id="postcode" type="text">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <a href="step3.html" class="button" role="button">Continue</a>
+  </form>
+
+</main>
+
+{{/content}}
+
+{{/layout}}
