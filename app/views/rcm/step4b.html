@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <h1 class="heading-large">Who do you suspect is committing benefit fraud</h1>
+  <h1 class="heading-large">Details of partner</h1>
 
   <form>
     <div class="form-group">
@@ -33,15 +33,10 @@
 
     <div class="form-group">
       <fieldset class="inline">
-        <legend class="form-label">Is this person known by another name?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
-            <input id="radio-indent-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="radio-indent-2">
-            <input id="radio-indent-2" class="hide-show" type="radio" name="radio-indent-group" value="No">
-            No
+            <input id="radio-indent-1" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
+            This person is known by another name
           </label>
         </div>
         <div class="panel-indent js-hidden" id="full-name-1">
@@ -63,10 +58,10 @@
 
     <div class="form-group">
       <fieldset class="inline">
-        <legend class="form-label">Do you know the date of birth for this person?</legend>
+        <legend class="form-label">Do you know the date of birth for this person</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-dob-1">
-            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes-dob  ">
+            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes-dob">
             Yes
           </label>
           <label class="block-label" for="radio-indent-dob-2">
@@ -102,22 +97,18 @@
       </fieldset>
     </div>
 
+
     <div class="form-group">
       <fieldset class="inline">
-        <legend class="form-label">Does you know the address for this person?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-address">
-            <input id="radio-indent-address" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="radio-indent-address-no">
-            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
-            No
+            <input id="radio-indent-address" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
+            This person lives at a different address to the suspect
           </label>
         </div>
         <div class="panel-indent js-hidden" id="address-1">
           <div class="form-group">
-            <label class="form-label" for="address">Building and Street</label>
+            <label class="form-label" for="address">Building and Street name</label>
             <input class="form-control" id="address" type="text">
           </div>
           <div class="form-group">
@@ -136,9 +127,24 @@
       </fieldset>
     </div>
 
-    
+    <div class="form-group">
+      <fieldset class="inline">
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-nino">
+            <input id="radio-indent-nino" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
+            I know the national insurance number for this person
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="full-name-1">
+          <div class="form-group">
+             <p class="form-hint text">For example, 'QQ 12 34 56 C'.</p>
+             <input class="form-control" id="first-name-2" type="text">
+           </div>
+         </div>
+      </fieldset>
+    </div>
 
-    <a href="step3.html" class="button" role="button">Continue</a>
+    <a href="step5.html" class="button" role="button">Continue</a>
   </form>
 
 </main>
