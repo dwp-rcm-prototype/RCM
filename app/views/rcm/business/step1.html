@@ -1,0 +1,88 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large">Report a business or employer</h1>
+
+  <form>
+    <div class="form-group">
+      <label class="form-label" for="name">Business or employer name</label>
+      <input class="form-control" id="name" type="text">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="type">Business or employer type
+        <span class="form-hint">For example, taxi, haidresser etc.</span>
+      </label>
+      <input class="form-control" id="type" type="text">
+    </div>
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-address">
+            <input id="radio-indent-address" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
+            I know the address for this business or employer
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="address-1">
+          <div class="form-group">
+            <label class="form-label" for="address">Building and Street name</label>
+            <input class="form-control" id="address" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="town">Town or city</label>
+            <input class="form-control" id="town" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="county">County</label>
+            <input class="form-control" id="county" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="postcode">Postcode</label>
+            <input class="form-control" id="postcode" type="text">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="contac">Business contact details
+        <span class="form-hint">For example, telelphone number or email address.</span>
+      </label>
+      <input class="form-control" id="contact" type="text">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="fraud">Why do you think the business or employer is committing fraud?
+      </label>
+      <textarea class="form-control" id="fraud" rows="5"> </textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="contac">How many people are employed by this business or employer?
+      </label>
+      <input class="form-control" id="contact" type="text">
+    </div>
+
+    <a href="step3a.html" class="button" role="button">Continue</a>
+  </form>
+
+
+</main>
+
+{{/content}}
+
+{{/layout}}

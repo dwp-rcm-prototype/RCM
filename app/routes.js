@@ -17,6 +17,7 @@ module.exports = {
         })
       } else {
         res.render('rcm/step6',{
+          'nextStep'  : 'step7',
           'assetPath' : assetPath
         })
       }
