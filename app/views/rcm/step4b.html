@@ -19,38 +19,35 @@
 
   <form>
     <div class="form-group">
-       <label class="form-label" for="first-name-2">First name</label>
+       <label class="form-label" for="first-name-2">First name(s)</label>
        <input class="form-control" id="first-name-2" type="text">
      </div>
      <div class="form-group">
        <label class="form-label" for="last-name-2">Last name</label>
        <input class="form-control" id="last-name-2" type="text">
      </div>
-     <div class="form-group">
-       <label class="form-label" for="other-name-1">Other names</label>
-       <input class="form-control" id="other-name-1" type="text">
-     </div>
 
     <div class="form-group">
       <fieldset class="inline">
+        <legend class="form-label">Do you know this person known by another name?</legend>
         <div class="form-group form-group-compound">
-          <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
-            <input id="radio-indent-1" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
-            This person is known by another name
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-other-yes">
+            <input id="radio-indent-other-yes" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-other-no">
+            <input id="radio-indent-other-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
+            No
           </label>
         </div>
-        <div class="panel-indent js-hidden" id="full-name-1">
+        <div class="panel-indent js-hidden" id="full-name-1a">
           <div class="form-group">
-             <label class="form-label" for="first-name-2">First name</label>
-             <input class="form-control" id="first-name-2" type="text">
+             <label class="form-label" for="first-name-2a">First name(s)</label>
+             <input class="form-control" id="first-name-2a" type="text">
            </div>
            <div class="form-group">
-             <label class="form-label" for="last-name-2">Last name</label>
-             <input class="form-control" id="last-name-2" type="text">
-           </div>
-           <div class="form-group">
-             <label class="form-label" for="other-name-1">Other names</label>
-             <input class="form-control" id="other-name-1" type="text">
+             <label class="form-label" for="last-name-2a">Last name</label>
+             <input class="form-control" id="last-name-2a" type="text">
            </div>
          </div>
       </fieldset>
@@ -58,14 +55,14 @@
 
     <div class="form-group">
       <fieldset class="inline">
-        <legend class="form-label">Do you know the date of birth for this person</legend>
+        <legend class="form-label">Do you know the date of birth for this person?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-dob-1">
-            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group" value="Yes-dob">
+            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group-1" value="Yes-dob">
             Yes
           </label>
           <label class="block-label" for="radio-indent-dob-2">
-            <input id="radio-indent-dob-2" class="hide-show" type="radio" name="radio-indent-group" value="No-dob">
+            <input id="radio-indent-dob-2" class="hide-show" type="radio" name="radio-indent-group-1" value="No-dob">
             No
           </label>
         </div>
@@ -100,10 +97,15 @@
 
     <div class="form-group">
       <fieldset class="inline">
+        <legend class="form-label">Do you know the address for this person?</legend>
         <div class="form-group form-group-compound">
-          <label class="block-label" data-target="example-ni-number" for="radio-indent-address">
-            <input id="radio-indent-address" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
-            This person lives at a different address to the suspect
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-address-yes">
+            <input id="radio-indent-address-yes" class="hide-show" type="radio" name="radio-indent-group-2" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-address-no">
+            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
+            No
           </label>
         </div>
         <div class="panel-indent js-hidden" id="address-1">
@@ -116,7 +118,7 @@
             <input class="form-control" id="town" type="text">
           </div>
           <div class="form-group">
-            <label class="form-label" for="county">County (optional)</label>
+            <label class="form-label" for="county">County</label>
             <input class="form-control" id="county" type="text">
           </div>
           <div class="form-group">
@@ -129,10 +131,15 @@
 
     <div class="form-group">
       <fieldset class="inline">
+        <legend class="form-label">Do you know the national insurance number for this person?</legend>
         <div class="form-group form-group-compound">
-          <label class="block-label" data-target="example-ni-number" for="radio-indent-nino">
-            <input id="radio-indent-nino" class="hide-show" type="checkbox" name="radio-indent-group" value="Yes">
-            I know the national insurance number for this person
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-nino-yes">
+            <input id="radio-indent-nino-yes" class="hide-show" type="radio" name="radio-indent-group-3" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-nino-no">
+            <input id="radio-indent-nino-no" class="hide-show" type="radio" name="radio-indent-group-3" value="No">
+            No
           </label>
         </div>
         <div class="panel-indent js-hidden" id="full-name-1">
@@ -144,9 +151,9 @@
       </fieldset>
     </div>
 
+    <a href="step5.html" class="button" role="button">Continue</a>
   </form>
 
-  <a href="step5.html" class="button" role="button">Continue</a>
 </main>
 
 {{/content}}
