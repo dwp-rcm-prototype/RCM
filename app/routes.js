@@ -63,5 +63,114 @@ module.exports = {
       }
     })
 
+
+    app.post('/rcm/step4b', function(req, res) {
+      if (req.body.radioIndentGroup === 'Yes-partner') {
+        res.render('rcm/step4b',{
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm/step6',{
+          'nextStep'  : 'step7',
+          'assetPath' : assetPath
+        })
+      }
+    });
+
+    app.post('/rcm/step6', function(req, res) {
+      if(req.body.radioGroup  === 'both') {
+        res.render('rcm/step6',{
+          'nextStep'  : 'step6a',
+          'assetPath' : assetPath
+        })
+      }
+      else if (req.body.radioGroup  === 'partner') {
+        res.render('rcm/step6a',{
+          'nextStep'  : 'step6a',
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm/step6',{
+          'nextStep'  : 'step7',
+          'assetPath' : assetPath
+        })
+      }
+    });
+
+    app.post('/rcm/step8', function(req, res) {
+      if(req.body.radioGroup  === 'both') {
+        res.render('rcm/step8',{
+          'nextStep'  : 'step8a',
+          'assetPath' : assetPath
+        })
+      }
+      else if (req.body.radioGroup  === 'partner') {
+        res.render('rcm/step8a',{
+          'nextStep'  : 'step8a',
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm/step8',{
+          'nextStep'  : 'step9',
+          'assetPath' : assetPath
+        })
+      }
+    })
+
+    //route-2
+
+    app.post('/rcm-route2/step4b', function(req, res) {
+      if (req.body.radioIndentGroup === 'Yes-partner') {
+        res.render('rcm-route2/step4b',{
+          'assetPath' : assetPath,
+          'nextStep'  : 'step2',
+        })
+      } else {
+        res.render('rcm-route2/step2',{
+          'assetPath' : assetPath
+        })
+      }
+    });
+
+    app.post('/rcm-route2/step6', function(req, res) {
+      if(req.body.radioGroup  === 'both') {
+        res.render('rcm-route2/step6',{
+          'nextStep'  : 'step6a',
+          'assetPath' : assetPath
+        })
+      }
+      else if (req.body.radioGroup  === 'partner') {
+        res.render('rcm-route2/step6a',{
+          'nextStep'  : 'step6a',
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm-route2/step6',{
+          'nextStep'  : 'step7',
+          'assetPath' : assetPath
+        })
+      }
+    });
+
+    app.post('/rcm-route2/step8', function(req, res) {
+      if(req.body.radioGroup  === 'both') {
+        res.render('rcm-route2/step8',{
+          'nextStep'  : 'step8a',
+          'assetPath' : assetPath
+        })
+      }
+      else if (req.body.radioGroup  === 'partner') {
+        res.render('rcm-route2/step8a',{
+          'nextStep'  : 'step8a',
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm-route2/step8',{
+          'nextStep'  : 'step9',
+          'assetPath' : assetPath
+        })
+      }
+    })
+
   }
 };

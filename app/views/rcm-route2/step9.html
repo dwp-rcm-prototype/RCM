@@ -1,0 +1,76 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large">Additional information</h1>
+
+  <form>
+
+    <div class="form-group">
+      <label class="form-label" for="reg">Would you like to provide any further information?
+        <span class="form-hint">For example, a description of the person or places they visit.</span>
+      </label>
+      <textarea class="form-control" id="reg" type="text" rows="5"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="reg">Where did you hear about this service?
+        <span class="form-hint">For example, google, TV advertisement, DWP office.</span>
+      </label>
+      <input class="form-control" id="reg" type="text" />
+    </div>
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Would you like to leave your contact details?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-contact-yes">
+            <input id="radio-indent-contact-yes" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-contact-no">
+            <input id="radio-indent-contact-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
+            No
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="full-name-1">
+          <div class="form-group">
+             <label class="form-label" for="first-name-2">Your name</label>
+             <input class="form-control" id="first-name-2" type="text">
+           </div>
+           <div class="form-group">
+             <label class="form-label" for="last-name-2">Your email address</label>
+             <input class="form-control" id="last-name-2" type="text">
+           </div>
+           <div class="form-group">
+             <label class="form-label" for="other-name-1">Your contact number</label>
+             <input class="form-control" id="other-name-1" type="text">
+           </div>
+         </div>
+      </fieldset>
+    </div>
+
+  </form>
+
+
+    <a href="step10.html" class="button" role="button">Submit</a>
+  </form>
+
+</main>
+
+{{/content}}
+
+{{/layout}}

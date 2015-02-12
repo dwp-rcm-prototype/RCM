@@ -1,0 +1,58 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large"></h1>
+
+  <form>
+    <div class="form-group">
+    <fieldset>
+      <legend class="form-label-bold heading-large">Which type of fraud do you want to report?</legend>
+      <p>Select all that apply</p>
+      <label class="block-label" for="checkbox-2">
+        <input id="checkbox-2" type="checkbox" value="workEarning">
+        Not telling us about earnings
+      </label>
+      <label class="block-label" for="checkbox-1">
+        <input id="checkbox-1" type="checkbox" value="parnter">
+        Living with a partner while claiming to be living alone
+      </label>
+      <label class="block-label" for="checkbox-3">
+        <input id="checkbox-3" type="checkbox" value="disabilityCarers">
+        Claiming a disability or carers benefit fraudulently
+      </label>
+      <label class="block-label" for="checkbox-7">
+        <input id="checkbox-7" type="checkbox" value="abroad">
+        The person claiming is no longer in the United Kingdom
+      </label>
+      <label class="block-label" for="checkbox-4">
+        <input id="checkbox-4" type="checkbox" value="idFraud">
+        Identity Fraud
+      </label>
+      <label class="block-label" for="checkbox-5">
+        <input id="checkbox-5" type="checkbox" value="savingsCapital">
+        Not telling us about savings or other income
+      </label>
+    </fieldset>
+    </div>
+  </form>
+  <a href="step5.html" class="button" role="button">Continue</a>
+
+</main>
+
+{{/content}}
+
+{{/layout}}

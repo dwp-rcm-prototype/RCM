@@ -1,0 +1,46 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large">Vehicle details</h1>
+
+  <form method="post" action="step8">
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label" for="radio-1">
+          <input id="radio-1" type="radio" name="radioGroup" value="suspect" aria-expanded="false">
+          The suspect has a vehicle
+        </label>
+
+        <label class="block-label" for="radio-2">
+          <input id="radio-2" type="radio" name="radioGroup" value="partner" aria-expanded="false">
+          Their partner has a vehicle
+        </label>
+        <p class="form-block">or</p>
+        <label class="block-label" for="radio-3">
+          <input id="radio-3" type="radio" name="radioGroup" value="both" aria-expanded="false">
+          They both have a vehicle each
+        </label>
+      </fieldset>
+    </div>
+    <input type="submit" class="button" role="button" value="Continue" />
+  </form>
+
+</main>
+
+{{/content}}
+
+{{/layout}}

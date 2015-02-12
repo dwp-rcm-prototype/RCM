@@ -1,0 +1,73 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main" class="content">
+  <div class="outer-block">
+    <div class="inner-block">
+      <div class="phase-banner">
+        <p><strong class="phase-tag">ALPHA</strong> <span>This is a new service – your <a href="/4/feedback">feedback</a> will help us to improve it.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-large">About their partner's work</h1>
+<!--for the partner -->
+  <form>
+
+    <div class="form-group">
+      <label class="form-label" for="first-name-2">Where does the partner work?</label>
+      <textarea class="form-control" id="first-name-2" type="textarea" rows="5"></textarea>
+    </div>
+
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Is the partner self employed?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-self-employed-yes">
+            <input id="radio-indent-self-employed-yes" class="hide-show" type="radio" name="radio-indent-group" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-self-employed-no">
+            <input id="radio-indent-self-employed-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
+            No
+          </label>
+        </div>
+        <div class="panel-indent js-hidden" id="full-name-1">
+          <div class="form-group">
+             <label class="form-label" for="first-name-2">What type of work do they do?</label>
+             <input class="form-control" id="first-name-2" type="text">
+           </div>
+         </div>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="work-legnth">How long has the partner been working?
+        <span class="form-hint">For example, 3 months.</span>
+      </label>
+      <input class="form-control" id="work-legnth" type="text">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="work-legnth">What time does the partner leave/return home?
+        <span class="form-hint">If times vary please tell us and also if they work specific days.</span>
+      </label>
+      <input class="form-control" id="work-legnth" type="text">
+    </div>
+
+  </form>
+
+
+    <a href="step7.html" class="button" role="button">Continue</a>
+  </form>
+
+</main>
+
+{{/content}}
+
+{{/layout}}
