@@ -17,39 +17,42 @@
 
   <h1 class="heading-large"></h1>
 
-  <form>
+
+    <form methond="post" action="step3a.html" id="form-fraud-type">
     <div class="form-group">
-    <fieldset>
+    <fieldset class="fieldset-fraud-type">
       <legend class="form-label-bold heading-large">Which type of fraud do you want to report?</legend>
       <p>Select all that apply</p>
       <label class="block-label" for="checkbox-2">
-        <input id="checkbox-2" type="checkbox" value="workEarning">
+        <input id="checkbox-2" class="input-fraud-type" type="checkbox" value="workEarning">
         Not telling us about earnings
       </label>
       <label class="block-label" for="checkbox-1">
-        <input id="checkbox-1" type="checkbox" value="parnter">
+        <input id="checkbox-1" class="input-fraud-type" type="checkbox" value="parnter">
         Living with a partner while claiming to be living alone
       </label>
       <label class="block-label" for="checkbox-3">
-        <input id="checkbox-3" type="checkbox" value="disabilityCarers">
+        <input id="checkbox-3" class="input-fraud-type" type="checkbox" value="disabilityCarers">
         Claiming a disability or carers benefit fraudulently
       </label>
       <label class="block-label" for="checkbox-7">
-        <input id="checkbox-7" type="checkbox" value="abroad">
+        <input id="checkbox-7" class="input-fraud-type" type="checkbox" value="abroad">
         The person claiming is no longer in the United Kingdom
       </label>
       <label class="block-label" for="checkbox-4">
-        <input id="checkbox-4" type="checkbox" value="idFraud">
+        <input id="checkbox-4" class="input-fraud-type" type="checkbox" value="idFraud">
         Identity Fraud
       </label>
       <label class="block-label" for="checkbox-5">
-        <input id="checkbox-5" type="checkbox" value="savingsCapital">
+        <input id="checkbox-5" class="input-fraud-type" type="checkbox" value="savingsCapital">
         Not telling us about savings or other income
       </label>
     </fieldset>
     </div>
+
+    <input type="submit" class="button" value="Continue" />
+    <p><a href="#" onclick="window.history.back()">Back</a></p>
   </form>
-  <a href="step3a.html" class="button" role="button">Continue</a>
 
 </main>
 
