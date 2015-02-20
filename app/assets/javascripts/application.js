@@ -35,27 +35,29 @@
   }
 
   var fraudTypeValidation = function () {
-    var form     = document.querySelector('#form-fraud-type'),
-        fieldset = document.querySelector('.fieldset-fraud-type'),
-        msgBox   = document.createElement('div'),
-        msgText  = document.createTextNode('Please select atleast one type of fraud'),
-        inputs   = document.querySelectorAll('.input-fraud-type');
+    var form           = document.querySelector('#form-fraud-type'),
+        fieldset       = document.querySelector('.fieldset-fraud-type'),
+        msgBox         = document.createElement('div'),
+        msgText        = document.createTextNode('Please select atleast one type of fraud'),
+        inputs         = document.querySelectorAll('.input-fraud-type'),
+        continueButton = document.querySelector('.button');
 
     form.addEventListener('submit', function (e) {
       if(atLeastOneChecked(inputs) === false) {
         fieldset.classList.add('invalid');
         msgBox.classList.add('validation-message');
         msgBox.appendChild(msgText);
-        form.insertBefore(msgBox,form.lastChild.previousSibling);
+        form.insertBefore(msgBox,continueButton.previousSibling);
         e.preventDefault();
       }
     });
   };
 
   var errorMsg = function (action,input,msgText) {
-    var msgBox  = document.createElement('div'),
-        msgText = document.createTextNode(msgText),
-        form    = document.querySelector('#form-suspect-info');
+    var msgBox         = document.createElement('div'),
+        msgText        = document.createTextNode(msgText),
+        form           = document.querySelector('#form-suspect-info'),
+        continueButton = document.querySelector('.button');
 
     if (action === 'add') {
       input.classList.add('invalid');
@@ -63,7 +65,7 @@
       input.parentNode.classList.add('invalid');
       msgBox.classList.add('validation-message');
       msgBox.appendChild(msgText);
-      form.insertBefore(msgBox,form.lastChild.previousSibling);
+      form.insertBefore(msgBox,continueButton.previousSibling);
     }
     else {
       input.classList.remove('invalid');
@@ -73,11 +75,12 @@
   }
 
   var basicInfoValidation = function () {
-    var form      = document.querySelector('#form-suspect-info'),
-        firstName = document.querySelector('#first-name-2')
-        lastName  = document.querySelector('#last-name-2')
-        age       = document.getElementsByName('radio-indent-group-1'),
-        button    = document.querySelector('#button-step3a');
+    var form           = document.querySelector('#form-suspect-info'),
+        firstName      = document.querySelector('#first-name-2')
+        lastName       = document.querySelector('#last-name-2')
+        age            = document.getElementsByName('radio-indent-group-1'),
+        button         = document.querySelector('#button-step3a'),
+        continueButton = document.querySelector('.button');;
 
       button.addEventListener('click', function (e) {
       var sendForm  = true
@@ -98,7 +101,7 @@
         fieldset.classList.add('invalid');
         msgBox.classList.add('validation-message');
         msgBox.appendChild(msgText);
-        form.insertBefore(msgBox,form.lastChild.previousSibling);
+        form.insertBefore(msgBox,continueButton.previousSibling);
 
         sendForm = false;
         //errorMsg('add',lastName ,'Please enter a last name');
@@ -133,7 +136,7 @@
           day.parentNode.parentNode.parentNode.classList.add('invalid')
           msgBox.classList.add('validation-message');
           msgBox.appendChild(msgText);
-          form.insertBefore(msgBox,form.lastChild.previousSibling);
+          form.insertBefore(msgBox,continueButton.previousSibling);
         }
       }
 
@@ -148,7 +151,7 @@
           approxAge.parentNode.parentNode.classList.add('invalid');
           msgBox.classList.add('validation-message');
           msgBox.appendChild(msgText);
-          form.insertBefore(msgBox,form.lastChild.previousSibling)
+          form.insertBefore(msgBox,continueButton.previousSibling)
         }
       }
 
@@ -168,7 +171,7 @@
         }
 
         if(addressOk !== true) {
-          var msgText = document.createTextNode('Please enter either a building and street name and town or just a postcode');
+          var msgText = document.createTextNode('Please enter either a building and street name and town   or just a postcode');
           sendForm = false;
           postcode.parentNode.parentNode.classList.add('invalid');
           if (address.value === '') {
@@ -188,7 +191,7 @@
           }
           msgBox.classList.add('validation-message');
           msgBox.appendChild(msgText);
-          form.insertBefore(msgBox,form.lastChild.previousSibling)
+          form.insertBefore(msgBox,continueButton.previousSibling)
         }
 
         /*if (postcode.value === '') {
