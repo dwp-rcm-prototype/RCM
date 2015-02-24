@@ -80,10 +80,16 @@
         lastName       = document.querySelector('#last-name-2')
         age            = document.getElementsByName('radio-indent-group-1'),
         button         = document.querySelector('#button-step3a'),
-        continueButton = document.querySelector('.button');;
+        continueButton = document.querySelector('.button');
 
       button.addEventListener('click', function (e) {
-      var sendForm  = true
+        var validationMessages = document.querySelectorAll('.validation-message'),
+            sendForm           = true;
+
+      for (i=0;i  < validationMessages.length; i++) {
+        validationMessages[i].parentNode.removeChild(validationMessages[i])
+      }
+
       if(firstName.value === '') {
         errorMsg('add',firstName,'Please enter a first name(s)');
         sendForm = false;
@@ -224,6 +230,10 @@
 
     if(document.querySelector('#form-fraud-type')) {
       fraudTypeValidation();
+      document.querySelector('#step2').addEventListener('click', function (e) {
+        var otherPerson = (document.querySelector('#checkbox-1').checked) ? true : false
+        sessionStorage.otherPerson = otherPerson;
+      })
     }
 
     if(document.querySelector('#form-suspect-info')) {

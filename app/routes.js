@@ -44,6 +44,7 @@ module.exports = {
     });
 
     app.post('/rcm/step8', function(req, res) {
+      //this one
       if(req.body.radioGroup  === 'both') {
         res.render('rcm/step8',{
           'nextStep'  : 'step8a',
@@ -57,7 +58,7 @@ module.exports = {
         })
       } else {
         res.render('rcm/step8',{
-          'nextStep'  : 'step9',
+          'nextStep'  : 'otherPerson',
           'assetPath' : assetPath
         })
       }
@@ -98,6 +99,7 @@ module.exports = {
     });
 
     app.post('/rcm/step8', function(req, res) {
+      var nextStep = (sessionStorage.getItem('otherPerson') === true) ? 'otherPerson' : 'stepd9';
       if(req.body.radioGroup  === 'both') {
         res.render('rcm/step8',{
           'nextStep'  : 'step8a',
@@ -166,11 +168,23 @@ module.exports = {
         })
       } else {
         res.render('rcm-route2/step8',{
-          'nextStep'  : 'step9',
+          'nextStep'  : 'steps9',
           'assetPath' : assetPath
         })
       }
     })
 
+    app.post('/rcm/step9' , function (req, res) {
+      if (req.body.radioIndentGroup === 'Yes') {
+
+          res.render('rcm/otherPerson',{
+            'assetPath' : assetPath
+          })
+      } else {
+        res.render('rcm/step9',{
+          'assetPath' : assetPath
+        })
+      }
+    })
   }
 };

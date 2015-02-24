@@ -15,21 +15,31 @@
     </div>
   </div>
 
-  <h1 class="heading-large">Who do you suspect is committing benefit fraud?</h1>
+  <h1 class="heading-large">Is there another person living in the household?</h1>
 
-  <form method="post" action="step4.html" id="form-suspect-info">
+  <form method="post" action="otherPerson2.html" class="form">
     <div class="form-group">
-       <label class="form-label" for="first-name-2">First name(s)</label>
-       <div class="validation-wrapper">
-         <input class="form-control" id="first-name-2" type="text">
-       </div>
+     <label class="form-label" for="rel-customer">Relationship to suspect</label>
+     <div class="validation-wrapper">
+       <input class="form-control" id="rel-customer" type="text">
      </div>
-     <div class="form-group">
-       <label class="form-label" for="last-name-2">Last name</label>
-       <div class="validation-wrapper">
-         <input class="form-control" id="last-name-2" type="text">
-       </div>
-     </div>
+   </div>
+   <div class="form-group">
+     <label class="form-label" for="other-number-c">How is this person linked to the allegation?</label>
+     <input class="form-control" id="other-number-c" type="text">
+   </div>
+   <div class="form-group">
+      <label class="form-label" for="first-name-2">First name(s)</label>
+      <div class="validation-wrapper">
+        <input class="form-control" id="first-name-2" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="last-name-2">Last name</label>
+      <div class="validation-wrapper">
+        <input class="form-control" id="last-name-2" type="text">
+      </div>
+    </div>
 
     <div class="form-group">
       <fieldset class="inline">
@@ -99,63 +109,7 @@
     </div>
 
 
-    <div class="form-group">
-      <fieldset class="inline">
-        <legend class="form-label">Do you know the address for this person?</legend>
-        <div class="form-group form-group-compound">
-          <label class="block-label" data-target="example-ni-number" for="radio-indent-address-yes">
-            <input id="radio-indent-address-yes" class="hide-show" type="radio" name="radio-indent-group-2" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="radio-indent-address-no">
-            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
-            No
-          </label>
-        </div>
-        <div class="panel-indent js-hidden" id="address-1">
-          <div class="form-group">
-            <label class="form-label" for="address">Building and Street name</label>
-            <input class="form-control" id="address" type="text">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="town">Town or city</label>
-            <input class="form-control" id="town" type="text">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="county">County</label>
-            <input class="form-control" id="county" type="text">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="postcode">Postcode</label>
-            <input class="form-control" id="postcode" type="text">
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-    <div class="form-group">
-      <fieldset class="inline">
-        <legend class="form-label">Do you know the national insurance number for this person?</legend>
-        <div class="form-group form-group-compound">
-          <label class="block-label" data-target="example-ni-number" for="radio-indent-nino-yes">
-            <input id="radio-indent-nino-yes" class="hide-show" type="radio" name="radio-indent-group-3" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="radio-indent-nino-no">
-            <input id="radio-indent-nino-no" class="hide-show" type="radio" name="radio-indent-group-3" value="No">
-            No
-          </label>
-        </div>
-        <div class="panel-indent js-hidden" id="full-name-1">
-          <div class="form-group">
-             <p class="form-hint text">For example, 'QQ 12 34 56 C'.</p>
-             <input class="form-control" id="first-name-2" type="text">
-           </div>
-         </div>
-      </fieldset>
-    </div>
-
-    <a href="step4.html" id="button-step3a" class="button" role="button">Continue </a>
+    <a href="otherPerson2.html" class="button" >Continue</a>
     <p><a href="#" onclick="window.history.back()">Back</a></p>
   </form>
 
