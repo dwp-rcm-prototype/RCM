@@ -17,11 +17,13 @@
 
   <h1 class="heading-large">About their partner's work</h1>
 <!--for the partner -->
-  <form>
+  <form class="form" id="form-suspect-work">
 
     <div class="form-group">
-      <label class="form-label" for="first-name-2">Where does the partner work?</label>
-      <textarea class="form-control" id="first-name-2" type="textarea" rows="5"></textarea>
+      <label class="form-label" for="where-working">Where does the partner work?</label>
+      <div class="validation-wrapper">
+        <textarea class="form-control" id="where-working" type="textarea" rows="5"></textarea>
+      </div>
     </div>
 
     <div class="form-group">
@@ -36,11 +38,17 @@
             <input id="radio-indent-self-employed-no" class="hide-show" type="radio" name="radio-indent-group" value="No">
             No
           </label>
+          <label class="block-label" for="radio-indent-self-employed-dont-know">
+            <input id="radio-indent-self-employed-dont-know" class="hide-show" type="radio" name="radio-indent-group" value="dont-know">
+            Don't know
+          </label>
         </div>
-        <div class="panel-indent js-hidden" id="full-name-1">
+        <div class="panel-indent js-hidden" >
           <div class="form-group">
-             <label class="form-label" for="first-name-2">What type of work do they do?</label>
-             <input class="form-control" id="first-name-2" type="text">
+             <label class="form-label" for="work-type">What type of work do they do?</label>
+             <div class="validation-wrapper">
+               <input class="form-control" id="work-type" type="text">
+            </div>
            </div>
          </div>
       </fieldset>
@@ -60,10 +68,7 @@
       <input class="form-control" id="work-legnth" type="text">
     </div>
 
-  </form>
-
-
-    <a href="step7.html" class="button" role="button">Continue</a>
+    <a href="step7.html" id="button-step6" class="button" role="button">Continue</a>
     <p><a href="#" onclick="window.history.back()">Back</a></p>
   </form>
 

@@ -17,14 +17,18 @@
 
   <h1 class="heading-large">Details of partner</h1>
 
-  <form>
+  <form class="form" id="form-partner-details">
     <div class="form-group">
        <label class="form-label" for="first-name-2">First name(s)</label>
-       <input class="form-control" id="first-name-2" type="text">
+       <div class="validation-wrapper">
+         <input class="form-control" id="first-name-2" type="text">
+       </div>
      </div>
      <div class="form-group">
        <label class="form-label" for="last-name-2">Last name</label>
-       <input class="form-control" id="last-name-2" type="text">
+       <div class="validation-wrapper">
+         <input class="form-control" id="last-name-2" type="text">
+       </div>
      </div>
 
     <div class="form-group">
@@ -97,15 +101,23 @@
 
     <div class="form-group">
       <fieldset class="inline">
-        <legend class="form-label">Do you know the address for this person?</legend>
+        <legend class="form-label">Do they live at the same address?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-address-yes">
-            <input id="radio-indent-address-yes" class="hide-show" type="radio" name="radio-indent-group-2" value="Yes">
+            <input id="radio-indent-address-yes" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
             Yes
           </label>
           <label class="block-label" for="radio-indent-address-no">
-            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
-            No
+            <input id="radio-indent-address-no" class="hide-show" type="radio" name="radio-indent-group-2" value="Yes">
+            No, and I know the address
+          </label>
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-address-no-address">
+            <input id="radio-indent-address-no-address" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
+            No, I dont know the address
+          </label>
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-address-dont-know">
+            <input id="radio-indent-address-dont-know" class="hide-show" type="radio" name="radio-indent-group-2" value="No">
+            Dont know
           </label>
         </div>
         <div class="panel-indent js-hidden" id="address-1">
@@ -151,7 +163,14 @@
       </fieldset>
     </div>
 
-    <a href="step5.html" class="button" role="button">Continue</a>
+    <div class="form-group">
+      <label class="form-label" for="reg">Do you have any additional information?</label>
+      <div class="validation-wrapper">
+        <textarea class="form-control" id="additonalInfo" type="text" rows="5"></textarea>
+      </div>
+    </div>
+
+    <a href="step5.html" class="button" id="button-step4b" role="button">Continue</a>
     <p><a href="#" onclick="window.history.back()">Back</a></p>
   </form>
 

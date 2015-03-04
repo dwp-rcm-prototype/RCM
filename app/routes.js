@@ -56,6 +56,11 @@ module.exports = {
           'nextStep'  : 'step8a',
           'assetPath' : assetPath
         })
+      } else if (req.body.radioGroup  === 'neither') {
+        res.render('rcm/otherPerson',{
+          'nextStep'  : 'otherPerson2',
+          'assetPath' : assetPath
+        })
       } else {
         res.render('rcm/step8',{
           'nextStep'  : 'otherPerson',
@@ -99,7 +104,7 @@ module.exports = {
     });
 
     app.post('/rcm/step8', function(req, res) {
-      var nextStep = (sessionStorage.getItem('otherPerson') === true) ? 'otherPerson' : 'stepd9';
+      var nextStep = (sessionStorage.getItem('otherPerson') === true) ? 'otherPerson' : 'step9';
       if(req.body.radioGroup  === 'both') {
         res.render('rcm/step8',{
           'nextStep'  : 'step8a',
@@ -119,8 +124,9 @@ module.exports = {
       }
     })
 
-    //route-2
-
+    /*******************************************
+    route-2 - question ordering changed
+    *********************************************/
     app.post('/rcm-route2/step4b', function(req, res) {
       if (req.body.radioIndentGroup === 'Yes-partner') {
         res.render('rcm-route2/step4b',{
