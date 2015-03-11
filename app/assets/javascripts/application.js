@@ -34,11 +34,21 @@
     return atleastOneChecked;
   }
 
+  var atLeastOneFieldEntered =  function (inputs) {
+    var atLeastOneFieldEntered = false;
+    for (i = 0; i < inputs.length; i++) {
+      if (inputs[i].value) {
+        atLeastOneFieldEntered = true;
+      }
+    }
+    return atLeastOneFieldEntered;
+  }
+
   var fraudTypeValidation = function () {
     var form           = document.querySelector('#form-fraud-type'),
         fieldset       = document.querySelector('.fieldset-fraud-type'),
         msgBox         = document.createElement('div'),
-        msgText        = document.createTextNode('Please select atleast one type of fraud'),
+        msgText        = document.createTextNode('Please select atleast one type of fraud.'),
         inputs         = document.querySelectorAll('.input-fraud-type'),
         continueButton = document.querySelector('.button');
 
@@ -102,7 +112,7 @@
         var form     = document.querySelector('#form-suspect-info'),
             fieldset = document.querySelector('.fieldset-dob'),
             msgBox   = document.createElement('div'),
-            msgText  = document.createTextNode('Please enter a date of birth or an approximate age');
+            msgText  = document.createTextNode('Please enter a date of birth or an approximate age.');
 
         fieldset.classList.add('invalid');
         msgBox.classList.add('validation-message');
@@ -120,7 +130,7 @@
             year    = document.querySelector('#dob-year'),
             dobFull = true,
             msgBox  = document.createElement('div'),
-            msgText = document.createTextNode('Please enter a full date of birth');
+            msgText = document.createTextNode('Please enter a full date of birth.');
 
 
         if(day.value === '') {
@@ -149,7 +159,7 @@
         var form      = document.querySelector('#form-suspect-info'),
             approxAge = document.querySelector('#dob-approx'),
             msgBox    = document.createElement('div'),
-            msgText   = document.createTextNode('Please enter an approximate age');
+            msgText   = document.createTextNode('Please enter an approximate age.');
 
         if(approxAge.value === '') {
           approxAge.classList.add('invalid');
@@ -176,9 +186,8 @@
         }
 
         if(addressOk !== true) {
-          var msgText = document.createTextNode('Please enter either a building and street name and town   or just a postcode');
+          var msgText = document.createTextNode('Please enter either a building and street name and town or just a postcode.');
           sendForm = false;
-          postcode.parentNode.parentNode.classList.add('invalid');
           if (address.value === '') {
             address.classList.add('invalid');
           }
@@ -189,180 +198,31 @@
             postcode.classList.add('invalid');
           }
           if (address.value === '' && town.value) {
-            var msgText = document.createTextNode('Please enter either a building and street name or postcode');
+            var msgText = document.createTextNode('Please enter either a building and street name or postcode.');
           }
           if (address.value && town.value === '') {
-            var msgText = document.createTextNode('Please enter either a town or postcode');
+            var msgText = document.createTextNode('Please enter either a town or postcode.');
           }
-          msgBox.classList.add('validation-message');
-          msgBox.appendChild(msgText);
-          form.insertBefore(msgBox,continueButton.previousSibling)
-        }
-
-        /*if (postcode.value === '') {
-          var msgText   = document.createTextNode('Please enter a postcode');
-          //postcode.classList.add('invalid');
           postcode.parentNode.parentNode.classList.add('invalid');
-          sendForm = false;
-        }
-
-        if (postcode === '' && (address === '' || town === '')) {
-          console.log('no address, no town');
-          sendForm = false;
-        }*/
-
-
-      }
-
-      if (sendForm === false) {
-        e.preventDefault();
-      }
-    })
-  };
-
-  var basicInfoValidationRoute3 = function () {
-    var form           = document.querySelector('#form-suspect-info'),
-        firstName      = document.querySelector('#first-name-2'),
-        lastName       = document.querySelector('#last-name-2'),
-        age            = document.getElementsByName('radio-indent-group-1'),
-        contactDetails = document.getElementsByName('radio-indent-group-3'),
-        button         = document.querySelector('#button-step3a-route3'),
-        continueButton = document.querySelector('.button');
-
-      button.addEventListener('click', function (e) {
-        var validationMessages = document.querySelectorAll('.validation-message'),
-            sendForm           = true;
-
-      for (i=0;i  < validationMessages.length; i++) {
-        validationMessages[i].parentNode.removeChild(validationMessages[i])
-      }
-
-      if(firstName.value === '') {
-        errorMsg('add',firstName,'Please enter a first name(s)');
-        sendForm = false;
-      }
-      if (lastName.value === '') {
-        errorMsg('add',lastName ,'Please enter a last name');
-        sendForm = false;
-      }
-      if(atLeastOneChecked(age) === false) {
-        var form     = document.querySelector('#form-suspect-info'),
-            fieldset = document.querySelector('.fieldset-dob'),
-            msgBox   = document.createElement('div'),
-            msgText  = document.createTextNode('Please enter a date of birth or an approximate age');
-
-        fieldset.classList.add('invalid');
-        msgBox.classList.add('validation-message');
-        msgBox.appendChild(msgText);
-        form.insertBefore(msgBox,continueButton.previousSibling);
-
-        sendForm = false;
-        //errorMsg('add',lastName ,'Please enter a last name');
-      }
-
-      if(document.querySelector('#radio-indent-contact-yes').checked) {
-        //console.log('chekced')
-      }
-
-      if(document.querySelector('#radio-indent-dob-1').checked) {
-        var form    = document.querySelector('#form-suspect-info'),
-            day     = document.querySelector('#dob-day'),
-            month   = document.querySelector('#dob-month'),
-            year    = document.querySelector('#dob-year'),
-            dobFull = true,
-            msgBox  = document.createElement('div'),
-            msgText = document.createTextNode('Please enter a full date of birth');
-
-
-        if(day.value === '') {
-          day.classList.add('invalid')
-          dobFull = false;
-        }
-        if(month.value === ''){
-          month.classList.add('invalid')
-          dobFull = false;
-        }
-        if(year.value === ''){
-          year.classList.add('invalid')
-          dobFull = false;
-        }
-
-        if (dobFull === false) {
-          sendForm = false;
-          day.parentNode.parentNode.parentNode.classList.add('invalid')
-          msgBox.classList.add('validation-message');
-          msgBox.appendChild(msgText);
-          form.insertBefore(msgBox,continueButton.previousSibling);
-        }
-      }
-
-      if(document.querySelector('#radio-indent-dob-2').checked) {
-        var form      = document.querySelector('#form-suspect-info'),
-            approxAge = document.querySelector('#dob-approx'),
-            msgBox    = document.createElement('div'),
-            msgText   = document.createTextNode('Please enter an approximate age');
-
-        if(approxAge.value === '') {
-          approxAge.classList.add('invalid');
-          approxAge.parentNode.parentNode.classList.add('invalid');
           msgBox.classList.add('validation-message');
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling)
         }
       }
 
-      if(document.querySelector('#radio-indent-address-yes').checked) {
-        var postcode  = document.querySelector('#postcode'),
-            address   = document.querySelector('#address'),
-            town      = document.querySelector('#town'),
-            msgBox    = document.createElement('div'),
-            addressOk = false;
+      if (document.querySelector('#radio-indent-contact-yes').checked) {
+        var inputs = document.querySelectorAll('.step3-contact');
+        if (! atLeastOneFieldEntered(inputs)) {
 
-        if (postcode.value) {
-          addressOk = true;
-        }
+          var msgText    = document.createTextNode('Please enter at least one contact detail.'),
+              msgBox     = document.createElement('div'),
+              homeNumber = document.querySelector('#home-number');
 
-        if (address.value && town.value) {
-          addressOk = true;
-        }
-
-        if(addressOk !== true) {
-          var msgText = document.createTextNode('Please enter either a building and street name and town   or just a postcode');
-          sendForm = false;
-          postcode.parentNode.parentNode.classList.add('invalid');
-          if (address.value === '') {
-            address.classList.add('invalid');
-          }
-          if (town.value === '') {
-            town.classList.add('invalid');
-          }
-          if (postcode.value === '') {
-            postcode.classList.add('invalid');
-          }
-          if (address.value === '' && town.value) {
-            var msgText = document.createTextNode('Please enter either a building and street name or postcode');
-          }
-          if (address.value && town.value === '') {
-            var msgText = document.createTextNode('Please enter either a town or postcode');
-          }
+          homeNumber.parentNode.parentNode.classList.add('invalid');
           msgBox.classList.add('validation-message');
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling)
         }
-
-        /*if (postcode.value === '') {
-          var msgText   = document.createTextNode('Please enter a postcode');
-          //postcode.classList.add('invalid');
-          postcode.parentNode.parentNode.classList.add('invalid');
-          sendForm = false;
-        }
-
-        if (postcode === '' && (address === '' || town === '')) {
-          console.log('no address, no town');
-          sendForm = false;
-        }*/
-
-
       }
 
       if (sendForm === false) {
@@ -456,20 +316,11 @@
   }
 
   var vehicleDetails = function () {
-    var form           = document.querySelector('#form-vehicle-details'),
-        inputs         = document.querySelectorAll('.vechileDetails'),
-        fieldset       = document.querySelector('.fieldset-vehcile-details'),
-        msgBox         = document.createElement('div'),
-        msgText        = document.createTextNode('Please select atleast one type of fraud'),
-        inputs         = document.querySelectorAll('.input-fraud-type'),
-        continueButton = document.querySelector('.button');
-
+    var form           = document.querySelector('#form-vehicle-information'),
+        vehicleType    = document.querySelector('#vehicle-type');
         form.addEventListener('submit', function (e) {
-          if(atLeastOneChecked(inputs) === false) {
-            fieldset.classList.add('invalid');
-            msgBox.classList.add('validation-message');
-            msgBox.appendChild(msgText);
-            form.insertBefore(msgBox,continueButton.previousSibling);
+          if(vehicleType.value === '') {
+            errorMsg('add',vehicleType,'Please enter the type of transport.');
             e.preventDefault();
           }
         })
@@ -484,18 +335,10 @@
 
     if(document.querySelector('#form-fraud-type')) {
       fraudTypeValidation();
-      document.querySelector('#step2').addEventListener('click', function (e) {
-        var otherPerson = (document.querySelector('#checkbox-1').checked) ? true : false
-        sessionStorage.otherPerson = otherPerson;
-      })
     }
 
     if(document.querySelector('#button-step3a')) {
       basicInfoValidation();
-    }
-
-    if(document.querySelector('#button-step3a-route3')) {
-      basicInfoValidationRoute3();
     }
 
     if(document.querySelector('#form-additonal-suspect-details')) {
@@ -507,6 +350,10 @@
     }
     if(document.querySelector('#button-step6')) {
       suspectWork();
+    }
+
+    if(document.querySelector('#form-vehicle-information')) {
+      vehicleDetails();
     }
 
   };

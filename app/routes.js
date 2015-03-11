@@ -43,33 +43,6 @@ module.exports = {
       }
     });
 
-    app.post('/rcm/step8', function(req, res) {
-      //this one
-      if(req.body.radioGroup  === 'both') {
-        res.render('rcm/step8',{
-          'nextStep'  : 'step8a',
-          'assetPath' : assetPath
-        })
-      }
-      else if (req.body.radioGroup  === 'partner') {
-        res.render('rcm/step8a',{
-          'nextStep'  : 'step8a',
-          'assetPath' : assetPath
-        })
-      } else if (req.body.radioGroup  === 'neither') {
-        res.render('rcm/otherPerson',{
-          'nextStep'  : 'otherPerson2',
-          'assetPath' : assetPath
-        })
-      } else {
-        res.render('rcm/step8',{
-          'nextStep'  : 'otherPerson',
-          'assetPath' : assetPath
-        })
-      }
-    })
-
-
     app.post('/rcm/step4b', function(req, res) {
       if (req.body.radioIndentGroup === 'Yes-partner') {
         res.render('rcm/step4b',{
@@ -104,21 +77,25 @@ module.exports = {
     });
 
     app.post('/rcm/step8', function(req, res) {
-      var nextStep = (sessionStorage.getItem('otherPerson') === true) ? 'otherPerson' : 'step9';
-      if(req.body.radioGroup  === 'both') {
-        res.render('rcm/step8',{
-          'nextStep'  : 'step8a',
-          'assetPath' : assetPath
-        })
-      }
-      else if (req.body.radioGroup  === 'partner') {
+      if(req.body.radioGroup  === 'Yes-vehicle') {
         res.render('rcm/step8a',{
           'nextStep'  : 'step8a',
           'assetPath' : assetPath
         })
       } else {
-        res.render('rcm/step8',{
-          'nextStep'  : 'step9',
+        res.render('rcm/otherPerson',{
+          'assetPath' : assetPath
+        })
+      }
+    })
+
+    app.post('/rcm/otherPerson', function(req, res) {
+      if (req.body.radioGroup === 'another-vehicle') {
+        res.render('rcm/step8a', {
+          'assetPath' : assetPath
+        })
+      } else {
+        res.render('rcm/otherPerson',{
           'assetPath' : assetPath
         })
       }

@@ -19,25 +19,18 @@
 
   <form method="post" action="step8" id="form-vehicle-details">
     <div class="form-group">
-      <fieldset class="fieldset-vehcile-details">
-        <label class="block-label" for="radio-1">
-          <input id="radio-1" type="radio" name="radioGroup" class="vechileDetails" value="suspect" aria-expanded="false">
-          The suspect has a vehicle
-        </label>
-
-        <label class="block-label" for="radio-2">
-          <input id="radio-2" type="radio" name="radioGroup" class="vechileDetails" value="partner" aria-expanded="false">
-          Their partner has a vehicle
-        </label>
-        <label class="block-label" for="radio-3">
-          <input id="radio-3" type="radio" name="radioGroup" class="vechileDetails" value="both" aria-expanded="false">
-          They both have a vehicle each
-        </label>
-        <p class="form-block">or</p>
-        <label class="block-label" for="radio-4">
-          <input id="radio-4" type="radio" name="radioGroup" class="vechileDetails" value="neither" aria-expanded="false">
-          There is no vechile
-        </label>
+      <fieldset class="inline">
+        <legend class="form-label">Do you want tell us about a vehicle?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" for="radio-indent-vehcile-1">
+            <input id="radio-indent-vehcile-1" class="hasVehicle" type="radio" name="radioGroup" value="Yes-vehicle">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-vehcile-2">
+            <input id="radio-indent-vehcile-2" class="hasVehicle" type="radio" name="radioGroup" value="No-vehicle">
+            No
+          </label>
+        </div>
       </fieldset>
     </div>
     <input type="submit" class="button" role="button" value="Continue" />

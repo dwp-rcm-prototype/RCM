@@ -15,14 +15,14 @@
     </div>
   </div>
 
-  <h1 class="heading-large">About their partner's vehicle</h1>
+  <h1 class="heading-large">About the vehicle</h1>
 
-  <form>
+  <form method="post" class="form" action="otherPerson" id="form-vehicle-information">
     <div class="form-group">
-      <label class="form-label" for="work-legnth">Type of transport?
+      <label class="form-label" for="vehicle-type">Type of transport?
         <span class="form-hint">For example, car, van, motorcycle.</span>
       </label>
-      <input class="form-control" id="work-legnth" type="text">
+      <input class="form-control" id="vehicle-type" type="text">
     </div>
     <div class="form-group">
       <label class="form-label" for="reg">Registration
@@ -44,12 +44,26 @@
       </label>
       <input class="form-control" id="colour" type="text">
     </div>
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label">Do you want tell us about another vehicle?</legend>
+        <div class="form-group form-group-compound">
+          <label class="block-label" for="radio-indent-vehcile-1">
+            <input id="radio-indent-vehcile-1" class="hasVehicle" type="radio" name="radioGroup" value="another-vehicle">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-vehcile-2">
+            <input id="radio-indent-vehcile-2" class="hasVehicle" type="radio" name="radioGroup" value="No-vehicle">
+            No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <input type="submit" class="button" role="button" value="Continue" />
+    <p><a href="step7.html" >Back</a></p>
   </form>
 
 
-    <a href="otherPerson.html" class="button" role="button">Continue</a>
-
-    <p><a href="step7.html" >Back</a></p>
   </form>
 
 </main>
