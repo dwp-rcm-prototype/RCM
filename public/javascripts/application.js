@@ -54,8 +54,8 @@
 
     form.addEventListener('submit', function (e) {
       if(atLeastOneChecked(inputs) === false) {
-        fieldset.classList.add('invalid');
-        msgBox.classList.add('validation-message');
+        fieldset.className += ' invalid';
+        msgBox.className += ' validation-message';
         msgBox.appendChild(msgText);
         form.insertBefore(msgBox,continueButton.previousSibling);
         e.preventDefault();
@@ -70,16 +70,16 @@
         continueButton = document.querySelector('.button');
 
     if (action === 'add') {
-      input.classList.add('invalid');
+      input.className += ' invalid';
 
-      input.parentNode.classList.add('invalid');
-      msgBox.classList.add('validation-message');
+      input.parentNode.className += ' invalid';
+      msgBox.className += ' validation-message';
       msgBox.appendChild(msgText);
       form.insertBefore(msgBox,continueButton.previousSibling);
     }
     else {
-      input.classList.remove('invalid');
-      input.parentNode.classList.remove('invalid');
+      input.className.replace('invalid','');
+      input.parentNode.className.replace('invalid','');
       document.querySelector('#form-nino').removeChild(document.querySelector('.validation-message'));
     }
   }
@@ -92,7 +92,7 @@
         button         = document.querySelector('#button-step3a'),
         continueButton = document.querySelector('.button');
 
-      button.addEventListener('click', function (e) {
+      form.addEventListener('submit', function (e) {
         var validationMessages = document.querySelectorAll('.validation-message'),
             sendForm           = true;
 
@@ -114,8 +114,8 @@
             msgBox   = document.createElement('div'),
             msgText  = document.createTextNode('Please enter a date of birth or an approximate age.');
 
-        fieldset.classList.add('invalid');
-        msgBox.classList.add('validation-message');
+        fieldset.className += ' invalid';
+        msgBox.className += ' validation-message';
         msgBox.appendChild(msgText);
         form.insertBefore(msgBox,continueButton.previousSibling);
 
@@ -134,22 +134,22 @@
 
 
         if(day.value === '') {
-          day.classList.add('invalid')
+          day.className += ' invalid'
           dobFull = false;
         }
         if(month.value === ''){
-          month.classList.add('invalid')
+          month.className += ' invalid'
           dobFull = false;
         }
         if(year.value === ''){
-          year.classList.add('invalid')
+          year.className += ' invalid'
           dobFull = false;
         }
 
         if (dobFull === false) {
           sendForm = false;
-          day.parentNode.parentNode.parentNode.classList.add('invalid')
-          msgBox.classList.add('validation-message');
+          day.parentNode.parentNode.parentNode.className += ' invalid'
+          msgBox.className += ' validation-message';
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling);
         }
@@ -162,9 +162,9 @@
             msgText   = document.createTextNode('Please enter an approximate age.');
 
         if(approxAge.value === '') {
-          approxAge.classList.add('invalid');
-          approxAge.parentNode.parentNode.classList.add('invalid');
-          msgBox.classList.add('validation-message');
+          approxAge.className += ' invalid';
+          approxAge.parentNode.parentNode.className += ' invalid';
+          msgBox.className += ' validation-message';
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling)
         }
@@ -189,13 +189,13 @@
           var msgText = document.createTextNode('Please enter either a building and street name and town or just a postcode.');
           sendForm = false;
           if (address.value === '') {
-            address.classList.add('invalid');
+            address.className += ' invalid';
           }
           if (town.value === '') {
-            town.classList.add('invalid');
+            town.className += ' invalid';
           }
           if (postcode.value === '') {
-            postcode.classList.add('invalid');
+            postcode.className += ' invalid';
           }
           if (address.value === '' && town.value) {
             var msgText = document.createTextNode('Please enter either a building and street name or postcode.');
@@ -203,8 +203,8 @@
           if (address.value && town.value === '') {
             var msgText = document.createTextNode('Please enter either a town or postcode.');
           }
-          postcode.parentNode.parentNode.classList.add('invalid');
-          msgBox.classList.add('validation-message');
+          postcode.parentNode.parentNode.className += ' invalid';
+          msgBox.className += ' validation-message';
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling)
         }
@@ -218,8 +218,8 @@
               msgBox     = document.createElement('div'),
               homeNumber = document.querySelector('#home-number');
 
-          homeNumber.parentNode.parentNode.classList.add('invalid');
-          msgBox.classList.add('validation-message');
+          homeNumber.parentNode.parentNode.className += ' invalid';
+          msgBox.className += ' validation-message';
           msgBox.appendChild(msgText);
           form.insertBefore(msgBox,continueButton.previousSibling)
         }
@@ -240,8 +240,8 @@
 
     form.addEventListener ('submit', function (e) {
       if (atLeastOneChecked(inputs) === false) {
-        document.querySelector('.hasPartner').parentNode.parentNode.parentNode.classList.add('invalid')
-        msgBox.classList.add('validation-message');
+        document.querySelector('.hasPartner').parentNode.parentNode.parentNode.className += ' invalid'
+        msgBox.className += ' validation-message';
         msgBox.appendChild(msgText);
         form.insertBefore(msgBox,continueButton.previousSibling);
         e.preventDefault();
@@ -304,7 +304,7 @@
 
       if (selfEmployed.checked && workType.value === '') {
         errorMsg('add',workType,'Please enter the type of work they do.');
-        workType.parentNode.parentNode.parentNode.classList.add('invalid');
+        workType.parentNode.parentNode.parentNode.className += ' invalid';
         sendForm = false;
       }
 
@@ -326,6 +326,51 @@
         })
   }
 
+  var businessRules = function () {
+    var form             = document.querySelector('#form-suspect-info');
+
+    form.addEventListener('submit', function (e) {
+      var firstname        = document.querySelector('#first-name-2'),
+          lastname         = document.querySelector('#last-name-2'),
+          nino             = document.querySelector('#nino'),
+          othernameChecked = document.querySelector('#radio-indent-other-yes').checked,
+          ninoChecked      = document.querySelector('#radio-indent-nino-yes').checked,
+          addressChecked   = document.querySelector('#radio-indent-address-yes').checked,
+          contactsChecked  = document.querySelector('#radio-indent-contact-yes').checked,
+          ageDob           = atLeastOneChecked(document.querySelectorAll('.dob-age')),
+          submitForm       = true;
+
+
+
+
+
+      if (ninoChecked && nino.value === '') {
+        console.log('enter nino')
+      }
+
+      if (ninoChecked && nino.value !== '') {
+        if ((firstname.value === '' && lastname.value === '' && ageDob === false) && (addressChecked === false) && (contactsChecked === false) ) {
+        console.log('nino entered but nothing else')
+        }
+      }
+
+      if (firstname.value && (lastname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
+        console.log('first name but nothing else')
+      }
+
+      if (lastname.value && (firstname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
+        console.log('last name but nothing else')
+      }
+
+      if (ageDob === true && (firstname.value === '' && lastname.value === '') && (addressChecked === false && contactsChecked === false)) {
+        console.log('age but nothing else')
+      }
+
+
+      e.preventDefault();
+    })
+  }
+
   bindEvents = function () {
     var inputs    = document.querySelectorAll('.hide-show');
 
@@ -337,8 +382,9 @@
       fraudTypeValidation();
     }
 
-    if(document.querySelector('#button-step3a')) {
+    if(document.querySelector('#form-suspect-info')) {
       basicInfoValidation();
+      //businessRules();
     }
 
     if(document.querySelector('#form-additonal-suspect-details')) {

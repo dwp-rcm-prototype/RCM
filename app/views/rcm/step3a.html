@@ -62,11 +62,11 @@
         <legend class="form-label">Do you know the date of birth for this person?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-dob-1">
-            <input id="radio-indent-dob-1" class="hide-show" type="radio" name="radio-indent-group-1" value="Yes-dob">
+            <input id="radio-indent-dob-1" class="dob-age hide-show" type="radio" name="radio-indent-group-1" value="Yes-dob">
             Yes
           </label>
           <label class="block-label" for="radio-indent-dob-2">
-            <input id="radio-indent-dob-2" class="hide-show" type="radio" name="radio-indent-group-1" value="No-dob">
+            <input id="radio-indent-dob-2" class="dob-age hide-show" type="radio" name="radio-indent-group-1" value="No-dob">
             No
           </label>
         </div>
@@ -146,10 +146,10 @@
             No
           </label>
         </div>
-        <div class="panel-indent js-hidden" id="full-name-1">
+        <div class="panel-indent js-hidden" id="nino-panel">
           <div class="form-group">
              <p class="form-hint text">For example, 'QQ 12 34 56 C'.</p>
-             <input class="form-control" id="first-name-2" type="text">
+             <input class="form-control" id="nino" type="text">
            </div>
          </div>
       </fieldset>
@@ -160,11 +160,11 @@
         <legend class="form-label">Do you have additional contact details for the suspect?</legend>
         <div class="form-group form-group-compound">
           <label class="block-label" data-target="example-ni-number" for="radio-indent-contact-yes">
-            <input id="radio-indent-contact-yes" class="hide-show" type="radio" name="radio-indent-group-3" value="Yes">
+            <input id="radio-indent-contact-yes" class="hide-show" type="radio" name="radio-indent-group-4" value="Yes">
             Yes
           </label>
           <label class="block-label" for="radio-indent-contact-no">
-            <input id="radio-indent-contact-no" class="hide-show" type="radio" name="radio-indent-group-3" value="No">
+            <input id="radio-indent-contact-no" class="hide-show" type="radio" name="radio-indent-group-4" value="No">
             No
           </label>
         </div>
@@ -193,7 +193,7 @@
       </fieldset>
     </div>
 
-    <a href="step4.html" id="button-step3a" class="button" role="button">Continue </a>
+    <input type="submit" id="button-step3a" class="button" role="button" value="Continue" />
     <p><a href="#" onclick="window.history.back()">Back</a></p>
   </form>
 
