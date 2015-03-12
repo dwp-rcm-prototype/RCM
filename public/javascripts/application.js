@@ -48,7 +48,7 @@
     var form           = document.querySelector('#form-fraud-type'),
         fieldset       = document.querySelector('.fieldset-fraud-type'),
         msgBox         = document.createElement('div'),
-        msgText        = document.createTextNode('Please select atleast one type of fraud.'),
+        msgText        = document.createTextNode('Please select at least one type of fraud.'),
         inputs         = document.querySelectorAll('.input-fraud-type'),
         continueButton = document.querySelector('.button');
 
@@ -325,51 +325,91 @@
           }
         })
   }
-
+/*
   var businessRules = function () {
     var form             = document.querySelector('#form-suspect-info');
 
     form.addEventListener('submit', function (e) {
       var firstname        = document.querySelector('#first-name-2'),
           lastname         = document.querySelector('#last-name-2'),
-          nino             = document.querySelector('#nino'),
           othernameChecked = document.querySelector('#radio-indent-other-yes').checked,
+          otherFirstname   = document.querySelector('#first-name-2a'),
+          otherLastname    = document.querySelector('#last-name-2a'),
           ninoChecked      = document.querySelector('#radio-indent-nino-yes').checked,
+          nino             = document.querySelector('#nino'),
           addressChecked   = document.querySelector('#radio-indent-address-yes').checked,
           contactsChecked  = document.querySelector('#radio-indent-contact-yes').checked,
           ageDob           = atLeastOneChecked(document.querySelectorAll('.dob-age')),
           submitForm       = true;
 
 
-
-
-
-      if (ninoChecked && nino.value === '') {
-        console.log('enter nino')
-      }
-
-      if (ninoChecked && nino.value !== '') {
-        if ((firstname.value === '' && lastname.value === '' && ageDob === false) && (addressChecked === false) && (contactsChecked === false) ) {
-        console.log('nino entered but nothing else')
+      function nameProvided () {
+        var nameProvided = false;
+        if (firstname.value !== '' || lastname.value !== '') {
+          nameProvided = true;
         }
+
+        if (othernameChecked && (otherFirstname.value !== '' || otherLastname.value !== '')) {
+          nameProvided = true;
+        }
+        return nameProvided;
       }
 
-      if (firstname.value && (lastname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
-        console.log('first name but nothing else')
+      function ageOrDobProvided () {
+        var ageProvided = false;
+        if (atLeastOneChecked(document.querySelectorAll('.dob-age'))) {
+          ageProvided = true;
+        }
+
+        return ageProvided;
       }
 
-      if (lastname.value && (firstname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
-        console.log('last name but nothing else')
+      function addressProvided () {
+        var addressProvided = false;
+        if (addressChecked) {
+          addressProvided = true;
+        }
+        return addressProvided;
       }
 
-      if (ageDob === true && (firstname.value === '' && lastname.value === '') && (addressChecked === false && contactsChecked === false)) {
-        console.log('age but nothing else')
+      function ninoProvided () {
+        var ninoProvided = false;
+        if (ninoChecked) {
+          ninoProvided = true;
+        }
+        return ninoProvided;
       }
 
+      function contactDetailsProvided () {
+        var contactDetailsProvided = false;
+        if (contactsChecked) {
+          contactDetailsProvided = true;
+        }
+        return contactDetailsProvided;
+      }
+
+      function addressOrContactProvided () {
+        var addressOrContactProvided = false;
+        if (addressProvided() || contactDetailsProvided()) {
+          addressOrContactProvided = true;
+        }
+        return addressOrContactProvided;
+      }
+
+      console.log('name -----' + nameProvided())
+      console.log('age -----' + ageOrDobProvided())
+      console.log('address -----' + addressProvided())
+      console.log('nino    -----' + ninoProvided())
+      console.log('contact -----' + contactDetailsProvided())
+      console.log('contact/address -----' + addressOrContactProvided())
+
+      if (ninoProvided() && nameProvided() === false) {
+        console.log('nino but no name')
+      }
 
       e.preventDefault();
     })
-  }
+  } */
 
   bindEvents = function () {
     var inputs    = document.querySelectorAll('.hide-show');
@@ -409,3 +449,29 @@
   };
 
 })();
+
+
+/*
+if (ninoChecked && nino.value === '') {
+  console.log('enter nino')
+}
+
+if (ninoChecked && nino.value !== '') {
+  if ((firstname.value === '' && lastname.value === '' && ageDob === false) && (addressChecked === false) && (contactsChecked === false) ) {
+  console.log('nino entered but nothing else')
+  }
+}
+
+if (firstname.value && (lastname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
+  console.log('first name but nothing else')
+}
+
+if (lastname.value && (firstname.value === '' && ageDob === false && addressChecked === false && contactsChecked === false)) {
+  console.log('last name but nothing else')
+}
+
+if (ageDob === true && (firstname.value === '' && lastname.value === '') && (addressChecked === false && contactsChecked === false)) {
+  console.log('age but nothing else')
+}
+
+*/
