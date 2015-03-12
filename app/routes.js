@@ -10,17 +10,10 @@ module.exports = {
       res.render('rcm/index.html', {'assetPath' : assetPath})
     });
 
-    app.post('/rcm/step4b', function(req, res) {
-      if (req.body.radioIndentGroup === 'Yes-partner') {
-        res.render('rcm/step4b',{
+    app.post('/rcm/step4', function(req, res) {
+        res.render('rcm/step4',{
           'assetPath' : assetPath
-        })
-      } else {
-        res.render('rcm/step6',{
-          'nextStep'  : 'step7',
-          'assetPath' : assetPath
-        })
-      }
+        });
     });
 
     app.post('/rcm/step6', function(req, res) {
