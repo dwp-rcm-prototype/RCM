@@ -325,7 +325,7 @@
           }
         })
   }
-/*
+
   var businessRules = function () {
     var form             = document.querySelector('#form-suspect-info');
 
@@ -360,7 +360,6 @@
         if (atLeastOneChecked(document.querySelectorAll('.dob-age'))) {
           ageProvided = true;
         }
-
         return ageProvided;
       }
 
@@ -402,14 +401,26 @@
       console.log('nino    -----' + ninoProvided())
       console.log('contact -----' + contactDetailsProvided())
       console.log('contact/address -----' + addressOrContactProvided())
+      console.log('----------------------------------------------------')
 
-      if (ninoProvided() && nameProvided() === false) {
-        console.log('nino but no name')
+      if ((ninoProvided() && nameProvided()) || (ninoProvided() && addressOrContactProvided())  ) {
+        console.log('submit form nino and name or address')
+        console.log('----------------------------------------------------')
+      }
+
+      if (ninoProvided() && ageOrDobProvided()) {
+        console.log('submit form nino and age')
+        console.log('----------------------------------------------------')
+      }
+
+      if ((nameProvided() && ageOrDobProvided()) && addressOrContactProvided()) {
+        console.log('submit form name and/or dob')
+        console.log('----------------------------------------------------')
       }
 
       e.preventDefault();
     })
-  } */
+  }
 
   bindEvents = function () {
     var inputs    = document.querySelectorAll('.hide-show');
@@ -423,8 +434,8 @@
     }
 
     if(document.querySelector('#form-suspect-info')) {
-      basicInfoValidation();
-      //businessRules();
+      //basicInfoValidation();
+      businessRules();
     }
 
     if(document.querySelector('#form-additonal-suspect-details')) {
